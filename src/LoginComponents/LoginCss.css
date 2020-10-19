@@ -1,0 +1,101 @@
+
+.wrap-login {
+    width: 100%;
+    height: 100%;
+    background-color: #f6f5f7;
+}
+.login {
+    width: 90%;
+}
+
+h1 {
+    font-weight: bold;
+}
+
+.form {
+    width: 400px;
+    border: 1px solid rgba(0,0,0, 0.1);
+    border-radius: 5px;
+    background-color: white;
+}
+
+.formGroup {
+    width: 84%;
+}
+
+.form-check{
+    width: 84%;
+}
+
+.link .link-login {
+    text-decoration: none;
+}
+
+.login .link-login {
+    text-decoration: none;
+    color: white;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+}
+.form .formGroup .wrap-input{
+    position: relative;
+    overflow: hidden;
+}
+
+.form .formGroup .wrap-input-after {
+    content: "";
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    height: 2px;
+    background-color:blue;
+    transform: translateX(-101%);
+    transition: all 0.3s;
+}
+
+.form .formGroup .iconLogin{
+    position: absolute;
+    top: 11px;
+    left: 10px;
+    opacity: 0.4;
+    font-size: 0.9em;
+    transition: all 0.2s;
+}
+
+.form .formGroup .wrap-input .input{
+    padding: 10px 0 12px 40px;
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 0px;
+    box-shadow: none !important;
+    border-bottom: 1.5px solid  rgba(0, 0, 0, 0.25);
+}
+
+.form .formGroup  .input::placeholder{
+    color: rgba(0, 0, 0, 0.4);
+    font-style: italic;
+}
+
+.form .formGroup  .input:focus::placeholder{
+    color: white;
+}
+
+.form .formGroup  .input:focus ~ .wrap-input-after {
+    transform: translateX(0);
+}
+
+.form .formGroup  .input:focus ~ .iconLogin {
+    opacity: 1;
+    color: blue;
+}
+
+
+/* ----------------------------------------Reponsive */
+
+@media only screen and (max-width: 412px){
+    .form{
+        width: 100%;
+    }
+}
