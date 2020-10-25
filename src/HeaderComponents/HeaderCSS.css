@@ -35,10 +35,12 @@
     color: white !important;
     font-size: 1em;
     font-weight: bold;
+    /* padding: 0 !important; */
 }
 
 .nav-right .nav-link svg {
     font-size: 25px;
+    color: white;
 }
 
 .nav-right .nav-cart {
@@ -101,6 +103,13 @@
     margin-left: 38px;
 }
 
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
+
+
 @media only screen and (max-width: 765px){
     .wrap-logo .search-book{
         margin-left: 50% !important;
@@ -115,5 +124,6 @@
         margin-left: 50%;
         transform: translateX(-50%);
     }
+
 }
 
