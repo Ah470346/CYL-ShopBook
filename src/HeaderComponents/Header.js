@@ -100,14 +100,14 @@ function Header(){
     const scrollHeader = ()=>{
         window.onscroll = function(){myFunction()};
         let sticky = navBarEl.current.offsetTop;
-        console.log(sticky);
 
         function myFunction() {
-            if(window.pageYOffset >= sticky){
-                console.log(window.pageYOffset);
-                navBarEl.current.classList.add('sticky');
-            } else {
-                navBarEl.current.classList.remove('sticky');
+            if(window.innerWidth > 775){
+                if(window.pageYOffset >= sticky){
+                    navBarEl.current.classList.add('sticky');
+                } else {
+                    navBarEl.current.classList.remove('sticky');
+                }
             }
         }
     }
