@@ -1,4 +1,4 @@
-import React,{useState} from 'react';
+import React,{useRef, useState,useEffect} from 'react';
 import {
     Collapse,
     Navbar,
@@ -6,19 +6,11 @@ import {
     NavbarBrand,
     Nav,
     NavItem,
-    NavLink,
-    UncontrolledDropdown,
-    DropdownToggle,
-    DropdownMenu,
-    DropdownItem,
-    NavbarText,
     Button
   } from 'reactstrap';
-  import './HeaderCSS.css';
-  import {
+import './HeaderCSS.css';
+import {
     BrowserRouter as Router,
-    Switch,
-    Route,
     Link
   } from "react-router-dom";
 import Logo1 from '../images/Logo1.svg';
@@ -27,6 +19,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import { faUserCircle} from '@fortawesome/free-solid-svg-icons';
+import Nav_Item from './Nav-itemComponent/NavItem.js';
 
 
 function Header(){
@@ -34,8 +27,95 @@ function Header(){
 
     const toggle = () => setIsOpen(!isOpen);
 
+    const navBarEl = useRef(null);
+    const p = useRef(null);
+
+    const [Options,setOptions] = useState([{
+        
+        title: "HOME",
+        link: "/home",
+        active: true,
+        content: []
+    },
+    {
+        title: "SHOP",
+        link: "/shop",
+        active: false,
+        content:[
+            {
+                id:1,
+                nameMenu:"Jacket",
+                arrMenu:["hello hello hello hello","hello hello hello hello"
+                ,"hello hello hello hello","hello hello hello hello"]
+            },
+            {
+                id:2,
+                nameMenu:"Jacket",
+                arrMenu:["hello hello hello hello","hello hello hello hello"
+                ,"hello hello hello hello","hello hello hello hello"]
+            },
+            {
+                id:3,
+                nameMenu:"Jacket",
+                arrMenu:["hello hello hello hello","hello hello hello hello"
+                ,"hello hello hello hello","hello hello hello hello"]
+            }
+        ]
+    },
+    {
+        title: "CONTACT",
+        link: "/contact",
+        active: false,
+        content:[
+            {
+                nameMenu:"",
+                arrMenu:["hello hello hello hello","hello hello hello hello"
+                ,"hello hello hello hello","hello hello hello hello"]
+            }
+        ]
+    },
+    {
+        title: "BLOG",
+        link: "/blog",
+        active: false,
+        content:[
+            {
+                nameMenu:"",
+                arrMenu:["hello hello hello hello","hello hello hello hello"
+                ,"hello hello hello hello","hello hello hello hello"]
+            }
+        ]
+    }]);
+    
+    function ChangeActive(title){
+        let arr = Options.map((item)=>{
+            if(item.title === title){
+                return {...item,active: true};
+            }
+            return{...item,active: false};
+        });
+        setOptions(arr);
+    }
+
+    const scrollHeader = ()=>{
+        window.onscroll = function(){myFunction()};
+        let sticky = navBarEl.current.offsetTop;
+        console.log(sticky);
+
+        function myFunction() {
+            if(window.pageYOffset >= sticky){
+                console.log(window.pageYOffset);
+                navBarEl.current.classList.add('sticky');
+            } else {
+                navBarEl.current.classList.remove('sticky');
+            }
+        }
+    }
+    useEffect(() => {
+        scrollHeader();
+    }, [])
     return (
-        <div>
+        <div >
             <div className="wrap-logo container">
                 <div className="row">
                     <div className="col-md-4">
@@ -60,59 +140,50 @@ function Header(){
                                     <FontAwesomeIcon icon={faShoppingCart}></FontAwesomeIcon>
                                     <div className="count-cart">9</div>
                                 </div>
-                                <p>MY CART</p>
+                                <p ref={p}>MY CART</p>
                             </Link>
                         </div>
                     </div>
                 </div>
             </div>
-            <Navbar className="navbar" dark expand="md">
+            <div ref={navBarEl}>
+            <Navbar  className="navbar" dark expand="md">
                 <NavbarBrand className="nav-brand">
                     <Link><img src={Logo2}></img></Link>
                 </NavbarBrand>
                 <NavbarToggler onClick={toggle} />
-                <Collapse isOpen={isOpen} navbar>
-                    <Nav className="mr-auto ml-5" navbar>
-                        <NavItem>
-                            <NavLink>
-                                <Link className="nav-link" to="/">HOME</Link>
-                            </NavLink>
-                        </NavItem>
-                        <NavItem>
-                            <NavLink>
-                                <Link className="nav-link" to="/">SHOP</Link>
-                            </NavLink>
-                        </NavItem>
-                        <NavItem>
-                            <NavLink>
-                                <Link className="nav-link" to="/">CONTACT</Link>
-                            </NavLink>
-                        </NavItem>
-                        <NavItem>
-                            <NavLink>
-                                <Link className="nav-link" to="/">BLOG</Link>
-                            </NavLink>
-                        </NavItem>
+                <Collapse className="nav-collapse" isOpen={isOpen} navbar>
+                    <Nav className="mr-auto ml-2" navbar>
+                        {
+                            Options.map((item,index)=>{
+                                return (<Nav_Item 
+                                    title={item.title} 
+                                    link={item.link} 
+                                    key={index}
+                                    onClick={() => ChangeActive(item.title)}
+                                    active={item.active}
+                                    content={item.content}
+                                    />
+                                )
+                                })
+                        }
                     </Nav>
                     <Nav className="ml-auto" navbar>
-                        <NavItem className="nav-right ml-md-auto mr-auto ml-5">
-                            <NavLink>
-                                <Link className="nav-link nav-cart" to="/">
-                                    <FontAwesomeIcon icon={faShoppingCart}/>
-                                    <div className="count-cart">9</div>
-                                </Link>
-                            </NavLink>
+                        <NavItem className="nav-right ml-md-auto mr-md-4 mr-auto ml-5">
+                            <Link className="nav-link nav-cart" to="/">
+                                <FontAwesomeIcon icon={faShoppingCart}/>
+                                <div className="count-cart">9</div>
+                            </Link>
                         </NavItem>
                         <NavItem className="nav-right ml-md-auto mr-md-5 mr-auto ml-5">
-                            <NavLink>
-                                <Link className="nav-link" to="/login">
-                                    <FontAwesomeIcon icon={faUserCircle}/>
-                                </Link>
-                            </NavLink>
+                            <Link className="nav-link" to="/login">
+                                <FontAwesomeIcon icon={faUserCircle}/>
+                            </Link>
                         </NavItem>
                     </Nav>
                 </Collapse>
             </Navbar>
+            </div>
         </div>
     );
 }
