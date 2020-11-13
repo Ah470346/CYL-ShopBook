@@ -1,0 +1,78 @@
+
+.wrap-register {
+    width: 100%;
+    height: 100%;
+    background-color: #f6f5f7;
+}
+.wrap-register .register {
+    width: 84%;
+}
+
+.wrap-register h1 {
+    font-weight: bold;
+}
+
+.wrap-register .form {
+    width: 450px;
+    border: 1px solid rgba(0,0,0, 0.1);
+    border-radius: 5px;
+    background-color: white;
+    margin-bottom: 50px;
+}
+
+.wrap-register .formGroup {
+    width: 84%;
+}
+
+.wrap-register .formGroup label {
+    margin: 0;
+}
+
+.wrap-register .form-check{
+    width: 84%;
+}
+
+.wrap-register .form-check input{
+    margin-top: 10px;
+}
+
+.wrap-register .link .link-register {
+    text-decoration: none;
+}
+
+.wrap-register .register .link-register {
+    text-decoration: none;
+    color: white;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+}
+.wrap-register .form .formGroup .wrap-input{
+    position: relative;
+    overflow: hidden;
+}
+
+.wrap-register .form .formGroup .wrap-input .input{
+    padding: 10px 0 10px 10px;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    font-size: 1.1em;
+    box-shadow: none !important;
+}
+
+.wrap-register .form .formGroup  .input::placeholder{
+    color: rgba(0, 0, 0, 0.4);
+}
+
+.wrap-register .form .formGroup  .input:focus::placeholder{
+    color: white;
+}
+
+/* ----------------------------------------Reponsive */
+
+@media only screen and (max-width: 412px){
+    .wrap-register .form{
+        width: 100%;
+    }
+}

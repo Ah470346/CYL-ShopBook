@@ -4,57 +4,46 @@
     height: 100%;
     background-color: #f6f5f7;
 }
-.login {
-    width: 90%;
+.wrap-login .login {
+    width: 84%;
 }
 
-h1 {
+.wrap-login h1 {
     font-weight: bold;
 }
 
-.form {
-    width: 400px;
+.wrap-login .form {
+    width: 450px;
     border: 1px solid rgba(0,0,0, 0.1);
     border-radius: 5px;
     background-color: white;
+    margin-bottom: 50px;
 }
 
-.formGroup {
+.wrap-login .formGroup {
     width: 84%;
 }
 
-.form-check{
+.wrap-login .form-check{
     width: 84%;
 }
 
-.link .link-login {
-    text-decoration: none;
-}
-
-.login .link-login {
-    text-decoration: none;
-    color: white;
-    display: inline-block;
-    width: 100%;
-    height: 100%;
-}
-.form .formGroup .wrap-input{
+.wrap-login .form .formGroup .wrap-input{
     position: relative;
     overflow: hidden;
 }
 
-.form .formGroup .wrap-input-after {
+.wrap-login .form .formGroup .wrap-input-after {
     content: "";
     position: absolute;
-    bottom: 0px;
+    top: 40px;
     width: 100%;
     height: 2px;
     background-color:blue;
     transform: translateX(-101%);
     transition: all 0.3s;
 }
-
-.form .formGroup .iconLogin{
+.wrap-login .form .formGroup .iconLogin{
     position: absolute;
     top: 11px;
     left: 10px;
@@ -63,7 +52,7 @@ h1 {
     transition: all 0.2s;
 }
 
-.form .formGroup .wrap-input .input{
+.wrap-login .form .formGroup .wrap-input .input{
     padding: 10px 0 12px 40px;
     width: 100%;
     height: 100%;
@@ -73,20 +62,20 @@ h1 {
     border-bottom: 1.5px solid  rgba(0, 0, 0, 0.25);
 }
 
-.form .formGroup  .input::placeholder{
+.wrap-login .form .formGroup  .input::placeholder{
     color: rgba(0, 0, 0, 0.4);
     font-style: italic;
 }
 
-.form .formGroup  .input:focus::placeholder{
+.wrap-login .form .formGroup  .input:focus::placeholder{
     color: white;
 }
 
-.form .formGroup  .input:focus ~ .wrap-input-after {
+.wrap-login .form .formGroup  .input:focus ~ .wrap-input-after {
     transform: translateX(0);
 }
 
-.form .formGroup  .input:focus ~ .iconLogin {
+.wrap-login .form .formGroup  .input:focus ~ .iconLogin {
     opacity: 1;
     color: blue;
 }
@@ -95,7 +84,7 @@ h1 {
 /* ----------------------------------------Reponsive */
 
 @media only screen and (max-width: 412px){
-    .form{
+    .wrap-login .form{
         width: 100%;
     }
 }
