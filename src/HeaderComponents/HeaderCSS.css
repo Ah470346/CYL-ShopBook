@@ -4,6 +4,7 @@
     width: 100%;
     padding: 0;
     padding-left: 10px;
+    z-index: 111;
 }
 
 .navbar .nav-brand {
@@ -40,8 +41,15 @@
 }
 
 .nav-right .nav-link svg {
-    font-size: 25px;
+    font-size: 24px;
     color: white;
+}
+
+.nav-right .auth .auth-link{
+    text-decoration: none;
+    color: #444 !important;
+    font-size: 1em;
+    font-weight: bold;
 }
 
 .nav-right .nav-cart {
@@ -110,8 +118,7 @@
     width: 100%;
     z-index: 111;
   }
-
-
+  
 @media only screen and (max-width: 765px){
     .wrap-logo .search-book{
         margin-left: 50% !important;
@@ -126,6 +133,5 @@
         margin-left: 50%;
         transform: translateX(-50%);
     }
-
 }
 

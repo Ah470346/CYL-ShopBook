@@ -6,7 +6,11 @@ import {
     NavbarBrand,
     Nav,
     NavItem,
-    Button
+    Button,
+    UncontrolledDropdown,
+    DropdownToggle,
+    DropdownMenu,
+    DropdownItem,
   } from 'reactstrap';
 import './HeaderCSS.css';
 import {
@@ -111,6 +115,7 @@ function Header(){
             }
         }
     }
+    
     useEffect(() => {
         scrollHeader();
     }, [])
@@ -176,8 +181,20 @@ function Header(){
                             </Link>
                         </NavItem>
                         <NavItem className="nav-right ml-md-auto mr-md-5 mr-auto ml-5">
-                            <Link className="nav-link" to="/login">
-                                <FontAwesomeIcon icon={faUserCircle}/>
+                            <Link className="nav-link auth">
+                                <UncontrolledDropdown nav inNavbar>
+                                    <DropdownToggle nav >
+                                        <FontAwesomeIcon icon={faUserCircle}/>
+                                    </DropdownToggle>
+                                    <DropdownMenu right>
+                                        <DropdownItem>
+                                            <Link className="auth-link" to='/login'>Login</Link>
+                                        </DropdownItem>
+                                        <DropdownItem>
+                                            <Link className="auth-link" to='/register'>Sign up</Link>
+                                        </DropdownItem>
+                                    </DropdownMenu>
+                                </UncontrolledDropdown>
                             </Link>
                         </NavItem>
                     </Nav>
