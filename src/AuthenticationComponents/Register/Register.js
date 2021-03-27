@@ -127,7 +127,7 @@ function Register({userList,changeData}){
                         Register
                     </Button>
                     <div className ="link mb-3">
-                        <Link className="link-register" to="/">Login as Existing Customer</Link>
+                        <Link className="link-register" to="/login">Login as Existing Customer</Link>
                     </div>
                 </AvForm>
             </div>

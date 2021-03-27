@@ -95,13 +95,13 @@ function Nav_Item ({title, link, onClick,active,content}){
                             })
                         }
                         {
-                            content.length === 1 && content.map(item=>{
+                            content.length === 1 && content.map((item,index)=>{
                                 return (
-                                    <ul className="sub-nav-ul">
+                                    <ul key={index} className="sub-nav-ul">
                                         {
-                                            item.arrMenu.map(i=>{
+                                            item.arrMenu.map((i,index)=>{
                                                 return(
-                                                    <li className="sub-nav-li single">
+                                                    <li key={index} className="sub-nav-li single">
                                                         <Link className="sub-nav-li-link" to="/">{i}</Link>
                                                     </li>
                                                 )

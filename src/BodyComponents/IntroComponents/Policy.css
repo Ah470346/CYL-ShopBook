@@ -1,0 +1,56 @@
+.contain-policy {
+}
+
+.contain-policy .policy-best-sale {
+    overflow: hidden;
+    border-radius: 3px !important;
+}
+
+.contain-policy .policy-best-sale img {
+    width: 100%;
+    transition: all ease-in 0.3s;
+}
+
+.contain-policy .policy-best-sale img:hover {
+    transform: scale(1.1);
+}
+
+.contain-policy .policy-content {
+    padding: 10px 30px 10px 20px;
+    background-color: #f4f4f4;
+    border-radius: 3px;
+    margin-top: 16px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    transition: all ease 0.3s;
+}
+.contain-policy .policy-content .policy-icon {
+    font-size: 28px;
+    color: #00abe0;
+}
+
+.contain-policy .policy-content .policy-icon.b {
+    font-size: 35px;
+}
+
+.contain-policy .policy-content .policy-icon.c {
+    font-size: 32px;
+}
+
+.contain-policy .policy-content p {
+    margin: 0;
+}
+
+.contain-policy .policy-content:hover p {
+    color: white;
+}
+
+.contain-policy .policy-content:hover .policy-icon {
+    color: white;
+}
+
+.contain-policy .policy-content:hover {
+    background-color: #00abe0;
+}
+

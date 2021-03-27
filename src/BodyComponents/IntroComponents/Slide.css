@@ -1,0 +1,55 @@
+.each-slide > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    height: 476px;
+  }
+  .contain-slide {
+      overflow: hidden;
+      background-position: center !important;
+  }
+  .wrap-intro-infor {
+      padding-left: 50px;
+      color: white;
+      height: 200px;
+      width: 100%;
+  }
+
+  .wrap-intro-infor h4 {
+      font-size: 2em;
+      /* transform: translateX(-400px); */
+  }
+  .wrap-intro-infor h1 {
+    font-size: 4em;
+    font-weight: 550;
+    /* transform: translateX(800px); */
+ }
+.wrap-intro-infor button{
+    margin-top: 10px;
+    width: 170px;
+    height: 50px;
+    /* transform: translateY(-400px); */
+}
+
+  .wrap-prevArrow .prevArrow {
+     color: white;
+     width: 50px;
+     height: 50px;
+     opacity: 0;
+     transition: all ease 1s;
+  } 
+  .wrap-nextArrow .nextArrow {
+    width: 50px;
+    color: white;
+    height: 50px;
+    transition: all ease 0.4s;
+    opacity: 0;
+} 
+
+.react-slideshow-container:hover >  .wrap-nextArrow .nextArrow {
+    opacity: 1;
+}
+.react-slideshow-container:hover >  .wrap-prevArrow .prevArrow {
+    opacity: 1;
+}

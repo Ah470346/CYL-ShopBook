@@ -1,4 +1,4 @@
-import React,{useRef, useState,useEffect} from 'react';
+import React,{useRef, useState,useEffect,useContext} from 'react';
 import {
     Collapse,
     Navbar,
@@ -24,15 +24,26 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import { faUserCircle} from '@fortawesome/free-solid-svg-icons';
 import Nav_Item from './Nav-itemComponent/NavItem.js';
+import Cookies from 'universal-cookie';
+import {AuthApi} from '../App.js';
 
+const cookies = new Cookies();
 
-function Header(){
+function Header(){ 
+    const Auth = useContext(AuthApi);
+    const [cookieToken,setCookieToken] = useState(cookies.get('token'));
     const [isOpen, setIsOpen] = useState(false);
 
     const toggle = () => setIsOpen(!isOpen);
 
     const navBarEl = useRef(null);
     const p = useRef(null);
+
+    const logout = ()=>{
+        cookies.remove('token');
+        setCookieToken(undefined);
+        Auth.setAuth(false);
+    }
 
     const [Options,setOptions] = useState([{
         
@@ -119,6 +130,11 @@ function Header(){
     useEffect(() => {
         scrollHeader();
     }, [])
+    useEffect(() => {
+        setTimeout(() => {
+            setCookieToken(cookies.get('token'));
+        },500);
+    })
     return (
         <div >
             <div className="wrap-logo container">
@@ -131,7 +147,7 @@ function Header(){
                             <input type="text" className="form-control" placeholder="Search your books"/>
                             <div className="input-group-append">
                                 <Button className="search-button" color="primary">
-                                    <Link className="search-link">
+                                    <Link className="search-link" to='/'>
                                         <FontAwesomeIcon icon={faSearch}></FontAwesomeIcon>
                                     </Link>
                                 </Button>
@@ -153,9 +169,7 @@ function Header(){
             </div>
             <div ref={navBarEl}>
             <Navbar  className="navbar" dark expand="md">
-                <NavbarBrand className="nav-brand">
-                    <Link><img src={Logo2}></img></Link>
-                </NavbarBrand>
+                <Link to='/'><img src={Logo2}></img></Link>
                 <NavbarToggler onClick={toggle} />
                 <Collapse className="nav-collapse" isOpen={isOpen} navbar>
                     <Nav className="mr-auto ml-2" navbar>
@@ -181,19 +195,36 @@ function Header(){
                             </Link>
                         </NavItem>
                         <NavItem className="nav-right ml-md-auto mr-md-5 mr-auto ml-5">
-                            <Link className="nav-link auth">
+                            <Link className="nav-link auth" to='/'>
                                 <UncontrolledDropdown nav inNavbar>
                                     <DropdownToggle nav >
                                         <FontAwesomeIcon icon={faUserCircle}/>
                                     </DropdownToggle>
-                                    <DropdownMenu right>
-                                        <DropdownItem>
-                                            <Link className="auth-link" to='/login'>Login</Link>
-                                        </DropdownItem>
-                                        <DropdownItem>
-                                            <Link className="auth-link" to='/register'>Sign up</Link>
-                                        </DropdownItem>
-                                    </DropdownMenu>
+                                    { 
+                                        cookieToken===undefined &&   
+                                        <DropdownMenu right>
+                                            <DropdownItem>
+                                                <Link className="auth-link" to='/login'>Login</Link>
+                                            </DropdownItem>
+                                            <DropdownItem>
+                                                <Link className="auth-link" to='/register'>Sign up</Link>
+                                            </DropdownItem>
+                                        </DropdownMenu>
+                                    }
+                                     { 
+                                        cookieToken &&   
+                                        <DropdownMenu right>
+                                            <DropdownItem>
+                                                <Link className="auth-link" to='/account'>My Account</Link>
+                                            </DropdownItem>
+                                            <DropdownItem>
+                                                <Link className="auth-link" to='/wishlist'>My Wishlist</Link>
+                                            </DropdownItem>
+                                            <DropdownItem onClick={logout}>
+                                                <Link className="auth-link" to='/login'>logout</Link>
+                                            </DropdownItem>
+                                        </DropdownMenu>
+                                    }
                                 </UncontrolledDropdown>
                             </Link>
                         </NavItem>
