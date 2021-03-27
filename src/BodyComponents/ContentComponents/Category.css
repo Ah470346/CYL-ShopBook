@@ -1,0 +1,108 @@
+.category-title {
+    background-color: #00abe0;
+    color: white;
+    font-weight: 600;
+}
+
+.category-title .menu-icon {
+    float: right;
+    margin-top: 3px;
+    margin-right: 5px;
+}
+
+.category-item {
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.category-item .category-link {
+    display: flex;
+    color: rgb(73, 72, 72) !important;
+    padding-left: 25px;
+    text-decoration: none;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 45px;
+}
+
+.category-item .menu-icon.right {
+    float: right;
+    margin-right: 15px;
+    color: rgb(73, 72, 72) !important;
+    font-size: 0.7em;
+}
+
+.category-item .menu-icon.down {
+    display: none;
+    float: right;
+    margin-right: 15px;
+    color: rgb(73, 72, 72) !important;
+    font-size: 0.7em;
+}
+
+.category-item .category-menu {
+        position: absolute;
+        display: flex;
+        left:100%;
+        top: 0;
+        padding: 0 0 20px 20px;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 640px;
+        z-index: 2;
+        transition: all 0.3s ease-in-out;
+        transform: scaleY(0);
+        transform-origin: top;
+        box-shadow: 0 2px 5px rgb(160, 160, 160);
+}
+
+.category-item .category-link:hover {
+    color: #00abe0 !important;
+}
+
+.category-item .category-link:hover .category-menu  {
+    transform: scaleY(1);
+}
+
+.category-item .collapse:not(.show){
+    display: inline-block !important;
+}
+
+@media only screen and (max-width: 992px){
+    .category-item .category-menu{
+        position: relative;
+        transform: none;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        left: 0;
+        top: 100%;
+        box-shadow: none;
+        z-index: 1;
+        width: 100% !important;
+    }
+    .category-item .category-link.book {
+        display: block;
+        height: auto;
+        padding-top: 12px;
+        margin-bottom: 12px;
+    }
+    .category-item .menu-icon {
+        margin-top: 7px;
+    }
+    .category-item .category-link {
+        font-weight: 600;
+    }
+    .category-item .menu-icon.right {
+        display: none;
+    }
+    .category-item .menu-icon.down {
+        display: inline;
+    }
+    .category-item .collapse:not(.show){
+        display: none !important;
+    }
+}

@@ -34,9 +34,9 @@ class ListGroupCollapse extends React.Component {
             <Collapse  isOpen={isOpend}>
                 <ul className="sub-nav-ul multiple-ul">
                 {
-                    itemMenu.arrMenu.map((i) => {
+                    itemMenu.arrMenu.map((i,index) => {
                         return (
-                            <li className="sub-nav-li">
+                            <li key = {index} className="sub-nav-li">
                                 <Link className="sub-nav-li-link" to="/">{i}</Link>
                             </li>
                         )
