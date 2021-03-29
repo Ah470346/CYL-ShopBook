@@ -2,7 +2,7 @@ import React, {useEffect} from 'react';
 import './Body.css';
 import SlideShow from './IntroComponents/Slide.js';
 import Policy from './IntroComponents/Policy.js';
-import Category from './ContentComponents/Category.js';
+import Category from './LeftContentComponents/Category.js';
 
 function Body({menuBook}){
     return (
