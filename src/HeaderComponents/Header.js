@@ -117,12 +117,10 @@ function Header(){
         let sticky = navBarEl.current.offsetTop;
 
         function myFunction() {
-            if(window.innerWidth > 775){
-                if(window.pageYOffset >= sticky){
-                    navBarEl.current.classList.add('sticky');
-                } else {
-                    navBarEl.current.classList.remove('sticky');
-                }
+            if(window.pageYOffset >= sticky){
+                navBarEl.current.classList.add('sticky');
+            } else {
+                navBarEl.current.classList.remove('sticky');
             }
         }
     }
@@ -138,9 +136,9 @@ function Header(){
     return (
         <div >
             <div className="wrap-logo container">
-                <div className="row">
+                <div className="top-header row">
                     <div className="col-md-4">
-                        <img className="image-logo" src={Logo1}></img>
+                        <img className="image-logo" src={Logo1} ></img>
                     </div>
                     <div className="col-md-5">
                         <div className="search-book input-group ml-auto">

@@ -1,0 +1,36 @@
+.wrap-favorite-brand {
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.wrap-favorite-brand img {
+    width: 100%;
+    height: 200px;
+    border-radius: 5px;
+    transition: all ease-in 0.3s;
+}
+
+.wrap-favorite-brand p {
+    position: absolute;
+    font-size: 1.5em;
+    top: 40px;
+    left: 3rem;
+    width: 9em;
+    transition: all ease-in 0.3s;
+}
+
+.wrap-favorite-brand .link-favorite-book {
+    display: inline-block;
+    border-radius: 5px;
+    text-decoration: none;
+    color: white !important;
+}
+
+.wrap-favorite-brand:hover img {
+    transform: scale(1.1);
+}
+
+.wrap-favorite-brand:hover p {
+    transform: scale(1.1);
+}
+

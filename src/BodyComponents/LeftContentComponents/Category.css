@@ -6,8 +6,8 @@
 
 .category-title .menu-icon {
     float: right;
-    margin-top: 3px;
-    margin-right: 5px;
+    margin-top: 0.1875em;
+    margin-right: 0.3125em;
 }
 
 .category-item {
@@ -20,7 +20,7 @@
 .category-item .category-link {
     display: flex;
     color: rgb(73, 72, 72) !important;
-    padding-left: 25px;
+    padding-left: 1.5625em;
     text-decoration: none;
     align-items: center;
     /* justify-content: space-between; */
@@ -31,7 +31,7 @@
 .category-item .category-link.book {
     display: block;
     color: rgb(73, 72, 72) !important;
-    padding-left: 25px;
+    padding-left: 1.5625em;
     text-decoration: none;
     align-items: center;
     width: 100%;
@@ -44,7 +44,7 @@
 .category-item .menu-icon.right {
     margin-top: 5px;
     float: right;
-    margin-right: 15px;
+    margin-right: 0.9375em;
     color: rgb(73, 72, 72) !important;
     font-size: 0.7em;
 }
@@ -52,7 +52,7 @@
 .category-item .menu-icon.down {
     display: none;
     float: right;
-    margin-right: 15px;
+    margin-right: 0.9375em;
     color: rgb(73, 72, 72) !important;
     font-size: 0.7em;
 }
@@ -62,7 +62,7 @@
         display: flex;
         left:100%;
         top: 0;
-        padding: 0 0 20px 20px;
+        padding: 0 0 20px 1.25em;
         flex-direction: row;
         flex-wrap: wrap;
         width: 640px;

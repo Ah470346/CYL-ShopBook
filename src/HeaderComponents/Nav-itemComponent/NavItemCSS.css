@@ -1,6 +1,6 @@
 
 .wrap-nav-link:first-child {
-    margin-left: 60px !important;
+    margin-left: 3.75em !important;
 }
 
 .wrap-nav-link .nav-link {
@@ -11,7 +11,7 @@
 }
 
 .wrap-nav-link .nav-link svg {
-    font-size: 12px;
+    font-size: 0.75em;
 }
 
 .wrap-nav-link .nav-link .custom-top-nav-link {
@@ -83,7 +83,7 @@
     list-style: none;
     padding: 0;
     left: 0;
-    padding-left: 20px;
+    padding-left: 1.25em;
     padding-top: 10px;
     overflow: hidden;
     transition: all 0.4s ease-out;
@@ -156,7 +156,7 @@
         transform: none;
         width: 100%;
         padding-bottom: 10px;
-        padding-right: 20px;
+        padding-right: 1.25em;
         margin-top: 10px;
     }
     .wrap-nav-link .nav-link .sub-nav-link .sub-nav-ul{
@@ -173,7 +173,7 @@
         position: absolute;
         display: inline-block;
         top:25px;
-        right: 20px;
+        right: 1.25em;
     }
     .wrap-nav-link .nav-link .sub-icon-plus ,  .sub-icon-minus{
         position: absolute;

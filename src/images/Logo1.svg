@@ -1,6 +1,13 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="300" height="75" viewBox="0 0 538 110">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 538 110">
+<defs>
+    <style type="text/css"><![CDATA[
+      #CYL_books {
+        font-size: 4.9375em;
+      }
+    ]]></style>
+  </defs>
   <g id="Group_1" data-name="Group 1" transform="translate(97 -251)">
-    <text id="CYL_books" data-name="CYL books" transform="translate(30 339)" fill="#0a68f5" font-size="79" font-family="Stencil"><tspan x="0" y="0">CYL books</tspan></text>
+    <text id="CYL_books" data-name="CYL books" transform="translate(30 339)" fill="#0a68f5" font-family="Stencil"><tspan x="0" y="0">CYL books</tspan></text>
     <path id="book-reader" d="M74.25,18.188C74.25,8.143,65.184,0,54,0S33.75,8.143,33.75,18.188,42.816,36.375,54,36.375,74.25,28.232,74.25,18.188ZM49.272,45.676c-12.516-6.882-32.787-8.77-42.987-9.293C2.859,36.211,0,38.555,0,41.516V83.727c0,2.716,2.445,4.979,5.589,5.125,9.21.434,27.843,2.024,40.719,7.849,1.977.895,4.32-.323,4.32-2.25v-46.6a2.482,2.482,0,0,0-1.353-2.172Zm52.44-9.293c-10.2.52-30.471,2.412-42.984,9.293a2.519,2.519,0,0,0-1.353,2.2V94.446c0,1.929,2.349,3.15,4.332,2.255,12.876-5.82,31.5-7.41,40.7-7.844,3.144-.148,5.589-2.412,5.589-5.128V41.516C108,38.555,105.141,36.211,101.712,36.383Z" transform="translate(-97 251)" fill="#0a68f5"/>
   </g>
 </svg>

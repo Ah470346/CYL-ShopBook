@@ -1,7 +1,7 @@
 .navbar{
     position: relative;
     background-color: #006f91;
-    width: 100%;
+    max-width: 100%;
     padding: 0;
     padding-left: 10px;
     z-index: 111;
@@ -37,11 +37,10 @@
     color: white !important;
     font-size: 1em;
     font-weight: bold;
-    /* padding: 0 !important; */
 }
 
 .nav-right .nav-link svg {
-    font-size: 24px;
+    font-size: 1.5em;
     color: white;
 }
 
@@ -61,7 +60,7 @@
     position: absolute;
     bottom: 3px;
     right: -2px;
-    width: 20px;
+    width: 1.25em;
     height: 20px;
     border-radius: 20px;
     background-color:#f7ad05;
@@ -76,10 +75,10 @@
     position: absolute;
     text-decoration: none;
     color: #444;
-    font-size: 35px;
+    font-size: 2.1875em;
     display: inline-block;
     height: 100%;
-    width: 180px;
+    width: 5em;
     right: 0px;
 
 }
@@ -93,23 +92,23 @@
     position: absolute;
     display: inline-block;
     bottom: 0;
-    right: -20px;
-    width: 30px;
+    right: -0.8em;
+    width: 1.25em;
     height: 30px;
     text-align: center;
     border-radius: 25px;
     background-color: #00abe0;
     color: white;
-    font-size: 22px;
+    font-size: 0.7em;
 }
 
 .wrap-logo .wrap-cart .link-cart p {
     display: inline-block;
     text-decoration: none;
     color: #444;
-    font-size: 19px;
+    font-size: 0.55em;
     font-weight: 700;
-    margin-left: 38px;
+    margin-left: 2em;
 }
 
 .sticky {
@@ -118,6 +117,11 @@
     width: 100%;
     z-index: 111;
   }
+
+.top-header {
+    width: 100%;
+    margin-left: 0px;
+}
   
 @media only screen and (max-width: 765px){
     .wrap-logo .search-book{
