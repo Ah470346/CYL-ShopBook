@@ -40,7 +40,7 @@ function App() {
     }
     fetchBooksList(); 
   },[]);
-
+  console.log(window.innerWidth);
   useEffect(()=>{
     const fetchMenuBook = async () => {
       try {

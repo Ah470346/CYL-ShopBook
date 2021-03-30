@@ -10,11 +10,12 @@
     transition: all ease-in 0.3s;
 }
 
-.wrap-favorite-brand h4 {
+.wrap-favorite-brand p {
     position: absolute;
+    font-size: 1.5em;
     top: 40px;
-    left: 40px;
-    width: 270px;
+    left: 3rem;
+    width: 9em;
     transition: all ease-in 0.3s;
 }
 
@@ -29,6 +30,7 @@
     transform: scale(1.1);
 }
 
-.wrap-favorite-brand:hover h4 {
+.wrap-favorite-brand:hover p {
     transform: scale(1.1);
 }
+

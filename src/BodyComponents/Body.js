@@ -6,6 +6,7 @@ import Category from './LeftContentComponents/Category.js';
 import FavoriteBook from './RightContentComponents/FavoriteBook.js';
 import book1 from '../images/bookFavorite1.jpg';
 import book2 from '../images/bookFavorite2.jpg';
+import book3 from '../images/book1.jpg';
 
 function Body({menuBook}){
     return (
@@ -29,6 +30,10 @@ function Body({menuBook}){
                         </div>
                         <div className='col-md-5 favorite-books-brand right'>
                             <FavoriteBook image={book2} title={"Celebrate Indigenous Peoples' Day"}></FavoriteBook>
+                        </div>
+                    </div>
+                    <div className='row slideShow'>
+                        <div className='col-md-12'>
                         </div>
                     </div>
                 </div>

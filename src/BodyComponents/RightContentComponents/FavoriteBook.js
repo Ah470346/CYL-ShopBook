@@ -11,7 +11,7 @@ function FavoriteBook({image,title}) {
         <div className="wrap-favorite-brand mt-md-0 mt-4">
             <Link className='link-favorite-book' to='/'>
                 <img src={image}></img>
-                <h4>{title}</h4>
+                <p>{title}</p>
             </Link>
         </div>
     )

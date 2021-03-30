@@ -22,8 +22,8 @@ function SlideShow (){
         duration: 5000,
         transitionDuration: 500,
         infinite: true,
-        prevArrow: <div className="wrap-prevArrow" style={{width: "30px", marginRight: "-30px"}}><FontAwesomeIcon className="prevArrow" icon={faAngleLeft} ></FontAwesomeIcon></div>,
-        nextArrow: <div className="wrap-nextArrow" style={{width: "30px", marginLeft: "-30px"}}><FontAwesomeIcon className="nextArrow" icon={faAngleRight} ></FontAwesomeIcon></div>,
+        prevArrow: <div className="wrap-prevArrow" ><FontAwesomeIcon className="prevArrow" icon={faAngleLeft} ></FontAwesomeIcon></div>,
+        nextArrow: <div className="wrap-nextArrow" ><FontAwesomeIcon className="nextArrow" icon={faAngleRight} ></FontAwesomeIcon></div>,
         onChange: (pre,next) =>{
             
         }
