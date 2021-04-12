@@ -14,6 +14,7 @@ import userApi from './api/userApi.js';
 import booksApi from './api/booksApi.js';
 import Cookies from 'universal-cookie';
 import menuBookApi from './api/menuBooksApi.js';
+import slideBooksApi from './api/slideBooksApi.js';
 
 const cookies = new Cookies();
 export const AuthApi  = React.createContext();
@@ -22,6 +23,7 @@ function App() {
   const [auth,setAuth] = useState(false);
   const [booksList,setBooksList] = useState([]);
   const [menuBook,setMenuBook] = useState([]);
+  const [slideBooks,setSlideBooks] = useState([]);
   const readCookie = ()=>{
     if(cookies.get('token')){
       setAuth(true);
@@ -29,23 +31,43 @@ function App() {
       setAuth(false);
     }
   }
+  // get slide books to Carousel 
+  useEffect(()=>{
+    const fetslideBooksList = async () =>{
+      try {
+        const response = await slideBooksApi.getAll();
+        if(response !== undefined){
+          setSlideBooks(response);
+        }
+      } catch (error) {
+        console.log('Failed to fetch books list: ', error);
+      }
+    }
+    fetslideBooksList();
+  },[]);
+  // get books Api
   useEffect(()=>{
     const fetchBooksList = async () => {
       try {
         const response = await booksApi.getAll();
-        setBooksList(response);
+        if(response !== undefined){
+          setBooksList(response);
+        }
       } catch (error) {
         console.log('Failed to fetch books list: ', error);
       }
     }
     fetchBooksList(); 
   },[]);
-  console.log(window.innerWidth);
+
+  // get menuBooks to category and header;
   useEffect(()=>{
     const fetchMenuBook = async () => {
       try {
         const response = await menuBookApi.getAll();
-        setMenuBook(response);
+        if(response !== undefined){
+          setMenuBook(response);
+        }
       } catch (error) {
         console.log('Failed to fetch books list: ', error);
       }
@@ -61,7 +83,10 @@ function App() {
           <Router>
             <Header></Header>
             <Routes/>
-            <Body menuBook={[...menuBook]}></Body> 
+            {
+              <Body menuBook={[...menuBook]} slideBooks={[...slideBooks]}></Body> 
+            }
+            
           </Router>
         </AuthApi.Provider>
       </div>

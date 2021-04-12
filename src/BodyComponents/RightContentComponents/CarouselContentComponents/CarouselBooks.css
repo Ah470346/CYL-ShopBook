@@ -1,0 +1,24 @@
+.wrap-slide-book{
+    margin-top: 40px;
+}
+.wrap-slide-book .book-title {
+    border-bottom: 3px solid #00abe0 ;
+    display: inline-block;
+}
+
+.wrap-slide-book .book-title .title {
+    font-size: 1.6em;
+    margin: 0;
+    padding: 0;
+}
+
+@media only screen and(max-width: 765px){
+    .wrap-slide-book .book-title .title {
+        font-size: 0.8em;
+    }
+
+    .react-multi-carousel-list {
+        margin-left: 50% !important;
+        transform: translateX(-50%) !important;
+    }
+}

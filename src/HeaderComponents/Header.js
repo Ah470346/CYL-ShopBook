@@ -152,7 +152,7 @@ function Header(){
                             </div>
                         </div>
                     </div>
-                    <div className="col-md-3">
+                    <div className="col-md-3 pl-lg-5 pl-md-4">
                         <div className="wrap-cart mt-3">
                             <Link className="link-cart" to="/">
                                 <div className="icon-cart">
