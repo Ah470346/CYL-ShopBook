@@ -79,7 +79,6 @@
     display: inline-block;
     height: 100%;
     width: 5em;
-    right: 0px;
 
 }
 
@@ -108,7 +107,7 @@
     color: #444;
     font-size: 0.55em;
     font-weight: 700;
-    margin-left: 2em;
+    margin-left: 1.8em;
 }
 
 .sticky {
@@ -136,6 +135,14 @@
         position: relative;
         margin-left: 50%;
         transform: translateX(-50%);
+        /* width: 4.5em; */
+    }
+    .wrap-logo .wrap-cart .link-cart p {
+        margin-left: 1.4em;
+    }
+    .wrap-logo .wrap-cart .link-cart {
+        font-size: 1.8em;
+    
     }
 }
 

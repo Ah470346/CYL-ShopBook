@@ -1,0 +1,200 @@
+.wrap-product {
+    width: 16.875em;
+    margin-top: 35px;
+}
+
+.wrap-product .product-image {
+    position: relative;
+    width: 100%;
+    height: 17.5em;
+
+}
+
+.wrap-product .product-image .quick-view-product{
+    position: absolute;
+    top:0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 0px;
+    opacity: 0.5;
+    background-color: white;
+    z-index: 1;
+    transition: all ease .5s;
+}
+
+.wrap-product .product-image:hover .quick-view-product {
+    height: 280px;
+
+}
+.wrap-product .product-image .flex-search{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.wrap-product .product-image .wrap-search {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 0.001em;
+    height: 0.001em;
+    background-color: #00abe0;
+    border-radius: 50%;
+    z-index: 2;
+    color: white;
+    transition: width ease 0.4s,height ease 0.4s ;
+}
+.wrap-product .product-image .wrap-search svg {
+    font-size: 0.001em;
+    transition: all ease 0.3s;
+}
+
+.wrap-product .product-image:hover .wrap-search {
+    width: 3.5em;
+    height: 3.5em;
+}
+
+.wrap-product .product-image:hover .wrap-search svg {
+    font-size: 1.3em;
+}
+
+.wrap-product  img {
+    margin-left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 280px;
+    box-shadow: 0 5px 5px rgb(160, 160, 160);
+}
+
+
+.wrap-product .product-sale{
+    position: absolute;
+    color: white;
+    left: 0px;
+    top: 0;
+    z-index: 3;
+}
+
+.wrap-product .product-sale .sale {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 40px;
+    height: 17px;
+    background-color: rgb(211, 109, 13);
+    font-size: 0.8em;
+    padding-left: 4px;
+}
+
+.wrap-product .product-sale .sale::after {
+    content: "";
+    position: absolute;
+    right:-8px;
+    bottom: 0;
+    height: 0;
+    width: 0;
+    border-right: 8px solid transparent;
+    border-bottom: 10px solid rgb(211, 109, 13);
+}
+
+.wrap-product .product-sale .sale::before {
+    content: "";
+    position: absolute;
+    right:-8px;
+    top:0;
+    height: 0;
+    width: 0;
+    border-right: 8px solid transparent;
+    border-top: 10px solid  rgb(211, 109, 13);
+}
+
+.wrap-product .product-sale .percent-sale {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 40px;
+    height: 17px;
+    background-color: rgb(211, 198, 13);
+    font-size: 0.8em;
+    padding-left: 4px;
+}
+
+.wrap-product .product-sale .percent-sale::after {
+    content: "";
+    position: absolute;
+    right:-8px;
+    bottom: 0;
+    height: 0;
+    width: 0;
+    border-right: 8px solid transparent;
+    border-bottom: 10px solid rgb(211, 198, 13);
+}
+
+.wrap-product .product-sale .percent-sale::before {
+    content: "";
+    position: absolute;
+    right:-8px;
+    top:0;
+    height: 0;
+    width: 0;
+    border-right: 8px solid transparent;
+    border-top: 10px solid   rgb(211, 198, 13);
+}
+
+.wrap-product .product-detail{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.wrap-product .product-detail .product-rate {
+    margin-top: 20px;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.wrap-product .product-detail .product-title {
+    width: 90%;
+    text-align: center;
+}
+
+.wrap-product .product-detail .product-title .product-link {
+    text-decoration: none;
+    color: rgb(32, 31, 31);
+    display: inline-block;
+    width: 100%;
+    height: 60px;
+}
+
+.wrap-product .product-detail .product-title .product-link:hover h5 {
+    color: #00abe0;
+}
+
+.wrap-product .product-detail .product-price .wrap-price {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.wrap-product .product-detail .product-price .price {
+    margin-right: 10px;
+    font-size: 1.5em;
+    color:  #00abe0;
+}
+
+.wrap-product .product-detail .product-price .price-sale {
+    text-decoration: line-through;
+    font-size: 1.1em;
+    color: rgb(87, 84, 84);
+}
+
