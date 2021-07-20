@@ -167,10 +167,10 @@ function Header(){
             </div>
             <div ref={navBarEl}>
             <Navbar  className="navbar" dark expand="md">
-                <Link to='/'><img src={Logo2}></img></Link>
+                <div className="container">
                 <NavbarToggler onClick={toggle} />
                 <Collapse className="nav-collapse" isOpen={isOpen} navbar>
-                    <Nav className="mr-auto ml-2" navbar>
+                    <Nav className="mr-auto" navbar>
                         {
                             Options.map((item,index)=>{
                                 return (<Nav_Item 
@@ -192,7 +192,7 @@ function Header(){
                                 <div className="count-cart">9</div>
                             </Link>
                         </NavItem>
-                        <NavItem className="nav-right ml-md-auto mr-md-5 mr-auto ml-5">
+                        <NavItem className="nav-right ml-md-auto mr-md-3 mr-auto ml-4">
                             <Link className="nav-link auth" to='/'>
                                 <UncontrolledDropdown nav inNavbar>
                                     <DropdownToggle nav >
@@ -228,6 +228,7 @@ function Header(){
                         </NavItem>
                     </Nav>
                 </Collapse>
+                </div>
             </Navbar>
             </div>
         </div>

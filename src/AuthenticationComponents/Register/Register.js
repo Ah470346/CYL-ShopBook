@@ -33,7 +33,7 @@ function Register({userList,changeData}){
     const handleValidSubmit = ()=>{
         setUser(()=>{return{email:inputUser,password:inputPass}});
         changeData();
-        history.push('/');
+        history.push('/login');
     }
     useEffect(() => {
         const createUser = async ()=>{
@@ -49,8 +49,8 @@ function Register({userList,changeData}){
     },[user]);
     return(
         <div className="wrap-register">
-            <div className="container d-flex flex-column align-items-center justify-content-center mb-5">
-                <AvForm className="form d-flex flex-column align-items-center mt-5"  onValidSubmit={handleValidSubmit}>
+            <div className="container d-flex flex-column align-items-center justify-content-center pb-3">
+                <AvForm className="form d-flex flex-column align-items-center mt-4"  onValidSubmit={handleValidSubmit}>
                     <h1 className="mt-5">Account Register</h1>
                     <AvGroup className="formGroup mt-3">
                         <Label for="userEmail">User Email:</Label>

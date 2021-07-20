@@ -61,7 +61,7 @@ function Nav_Item ({title, link, onClick,active,content}){
         activeMenu();
     },[active]);
     return(
-        <NavItem onClick={collapseEvent} className="wrap-nav-link ml-3 mr-5 mr-md-0">
+        <NavItem onClick={collapseEvent} className="wrap-nav-link mr-5 mr-md-0">
             <Link ref={linkEl} 
                 className={classNames('nav-link','nav-link-color')} 
                 onClick={onClick}   

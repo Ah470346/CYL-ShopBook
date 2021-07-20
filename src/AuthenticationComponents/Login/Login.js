@@ -41,7 +41,7 @@ function Login({userList}){
     })
     return (
         <div className="wrap-login">
-            <div className="container d-flex flex-column align-items-center justify-content-center mb-5">
+            <div className="container d-flex flex-column align-items-center justify-content-center pb-4">
                 <Form className="form d-flex flex-column align-items-center mt-5" onSubmit={handleSubmit}>
                     <h1 className="mt-5 mb-1">Login</h1>
                     {isLogin === false && <p className="errorAccount">Account or password is incorrect!</p>}

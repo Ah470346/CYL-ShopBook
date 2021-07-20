@@ -3,7 +3,7 @@ import { param } from 'jquery';
 import queryString from 'query-string';
 
 const axiosClient = axios.create({
-    baseURL: process.env.REACT_APP_API_URL,
+    baseURL: "/api",
     headers: {
         'content-type': 'application/json'
     },

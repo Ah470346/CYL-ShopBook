@@ -62,6 +62,7 @@ function App() {
 
   // get menuBooks to category and header;
   useEffect(()=>{
+    
     const fetchMenuBook = async () => {
       try {
         const response = await menuBookApi.getAll();
@@ -77,23 +78,19 @@ function App() {
   useEffect(()=>{
     readCookie();
   },[auth]);
+  console.log(auth);
   return (
       <div className="App">
         <AuthApi.Provider value={{auth,setAuth}}>
           <Router>
-            <Header></Header>
-            <Routes/>
-            {
-              <Body menuBook={[...menuBook]} slideBooks={[...slideBooks]}></Body> 
-            }
-            
+            <Routes menuBook={[...menuBook]} slideBooks={[...slideBooks]}/>
           </Router>
         </AuthApi.Provider>
       </div>
   );
 }
 
-const Routes = ()=>{
+const Routes = ({menuBook,slideBooks})=>{
   const [userList , setUserList] = useState([]);
   const [changeData , setChangeData] = useState(false);
   const Auth = useContext(AuthApi);
@@ -113,7 +110,9 @@ const Routes = ()=>{
   },[changeData]);
   return (
         <Switch>
-          <Route exact path="/home" >
+          <Route exact path="/" >
+            <Header></Header>
+            <Body menuBook={[...menuBook]} slideBooks={[...slideBooks]}></Body> 
           </Route>
           <ProtectLoginRoute exact path="/login" auth={Auth.auth}>
             <Login userList={[...userList]} changeData={change}/>
@@ -125,10 +124,13 @@ const Routes = ()=>{
             <Register userList={[...userList]} changeData={change}/>
           </Route>
           <Route exact path="/shop">
+            <Header></Header>
           </Route>
           <Route exact path="/contact">
+            <Header></Header>
           </Route>
           <Route exact path="/blog">
+            <Header></Header>
           </Route>
           <ProtectAccountRoute exact path="/account" auth={Auth.auth}>
             <p>Welcome this is Account</p>

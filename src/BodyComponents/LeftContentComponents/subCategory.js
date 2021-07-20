@@ -1,11 +1,4 @@
-import React,{useState,useRef,useEffect} from 'react';
-import { 
-        Collapse,
-        NavItem } from 'reactstrap';
-import {
-    BrowserRouter as Router,
-    Link
-  } from "react-router-dom";
+import React,{useState} from 'react';
 import './subCategory.css';
 import ListGroupCollapse from './ListGroupCollapse.js';
 
