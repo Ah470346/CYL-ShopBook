@@ -1,11 +1,17 @@
 
 .wrap-login {
     width: 100%;
-    height: 100%;
     background-color: #f6f5f7;
+    font-size: 1.1em;
+}
+
+.wrap-login .container{
+    height: 100vh;
 }
 .wrap-login .login {
     width: 84%;
+    height: 45px;
+    font-size: 1.1em;
 }
 
 .wrap-login h1 {
@@ -17,7 +23,6 @@
     border: 1px solid rgba(0,0,0, 0.1);
     border-radius: 5px;
     background-color: white;
-    margin-bottom: 50px;
 }
 
 .wrap-login .formGroup {
@@ -36,9 +41,9 @@
 .wrap-login .form .formGroup .wrap-input-after {
     content: "";
     position: absolute;
-    top: 40px;
     width: 100%;
     height: 2px;
+    bottom: 0px;
     background-color:blue;
     transform: translateX(-101%);
     transition: all 0.3s;

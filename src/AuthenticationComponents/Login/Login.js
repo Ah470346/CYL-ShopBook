@@ -11,38 +11,34 @@ import {
   } from "react-router-dom";
 import authApi from '../../api/authApi.js';
 import {AuthApi} from '../../App.js';
+import Cookies from 'universal-cookie';
 
-function Login({userList}){
+const cookies = new Cookies();
+
+function Login(){
     let history = useHistory();
     const Auth = useContext(AuthApi);
-    const [isLogin,setIsLogin] = useState(true);
     const inputUserEl = useRef(null);
+    const [isLogin,setIsLogin] = useState(true);
     const inputPassEl = useRef(null);
-    const fetchAuthentication = async (user) => {
-        try {
-            const response = await authApi.getToken(user);
-        } catch (error) {
-            console.log('Failed to fetch authentication: ', error);
-        }
-      }
-    const handleSubmit = (event)=>{
+    const handleSubmit = async (event)=>{
         event.preventDefault();
-        for(let i of userList){
-            if(inputUserEl.current.value === i.email && inputPassEl.current.value === i.password){
-                setIsLogin(true);
-                fetchAuthentication(i);
+        try {
+            const response = await authApi.getAuth({email:inputUserEl.current.value,password:inputPassEl.current.value});
+            if(response){
                 Auth.setAuth(true);
                 history.push('/');
+                setIsLogin(true);
             }
+        } catch (error) {
+            console.log('Failed to fetch authentication: ', error);
+            setIsLogin(false);
         } 
-        setIsLogin(false);
     }
-    useEffect(() => {
-    })
     return (
         <div className="wrap-login">
             <div className="container d-flex flex-column align-items-center justify-content-center pb-4">
-                <Form className="form d-flex flex-column align-items-center mt-5" onSubmit={handleSubmit}>
+                <Form className="form d-flex flex-column align-items-center" onSubmit={handleSubmit}>
                     <h1 className="mt-5 mb-1">Login</h1>
                     {isLogin === false && <p className="errorAccount">Account or password is incorrect!</p>}
                     <FormGroup className="formGroup mt-5">

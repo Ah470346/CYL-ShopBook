@@ -10,17 +10,20 @@ import {
   Route,
   Redirect,
 } from "react-router-dom";
-import userApi from './api/userApi.js';
 import booksApi from './api/booksApi.js';
 import Cookies from 'universal-cookie';
 import menuBookApi from './api/menuBooksApi.js';
 import slideBooksApi from './api/slideBooksApi.js';
+import {Skeleton,Spin} from 'antd';
 
 const cookies = new Cookies();
 export const AuthApi  = React.createContext();
+export const LoadContext  = React.createContext();
 
 function App() {
   const [auth,setAuth] = useState(false);
+  const [load,setLoad] = useState(false);
+  const [spin,setSpin] = useState(false);
   const [booksList,setBooksList] = useState([]);
   const [menuBook,setMenuBook] = useState([]);
   const [slideBooks,setSlideBooks] = useState([]);
@@ -78,36 +81,29 @@ function App() {
   useEffect(()=>{
     readCookie();
   },[auth]);
-  console.log(auth);
   return (
       <div className="App">
         <AuthApi.Provider value={{auth,setAuth}}>
-          <Router>
-            <Routes menuBook={[...menuBook]} slideBooks={[...slideBooks]}/>
-          </Router>
+            <LoadContext.Provider value={{setLoad,setSpin}}>
+                <Spin spinning={spin}>
+                    <Skeleton active loading={load}>
+                        <Router>
+                            <Routes menuBook={[...menuBook]} slideBooks={[...slideBooks]}/>
+                        </Router>
+                    </Skeleton>
+                </Spin>
+            </LoadContext.Provider>
         </AuthApi.Provider>
       </div>
   );
 }
 
 const Routes = ({menuBook,slideBooks})=>{
-  const [userList , setUserList] = useState([]);
   const [changeData , setChangeData] = useState(false);
   const Auth = useContext(AuthApi);
   const change = () => {
     setChangeData(!changeData);
   }
-  useEffect(() => {
-    const fetchUserList = async () => {
-      try {
-          const response = await userApi.getAll();
-          setUserList(response);
-      } catch (error) {
-          console.log('Failed to fetch users list: ', error);
-      }
-    }
-    setTimeout(fetchUserList,1000);
-  },[changeData]);
   return (
         <Switch>
           <Route exact path="/" >
@@ -115,13 +111,13 @@ const Routes = ({menuBook,slideBooks})=>{
             <Body menuBook={[...menuBook]} slideBooks={[...slideBooks]}></Body> 
           </Route>
           <ProtectLoginRoute exact path="/login" auth={Auth.auth}>
-            <Login userList={[...userList]} changeData={change}/>
+            <Login changeData={change}/>
           </ProtectLoginRoute>
           <Route exact path="/alreadyLogin">
             <p>You Already Login</p>
           </Route>
           <Route exact path="/register">
-            <Register userList={[...userList]} changeData={change}/>
+            <Register changeData={change}/>
           </Route>
           <Route exact path="/shop">
             <Header></Header>

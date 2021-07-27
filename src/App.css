@@ -1,10 +1,6 @@
 .App {
     font-family: 'Times New Roman', Times, serif;
     font-size: 1em;
-    max-width: 100%;
-}
-.div {
-    height: 2000px;
 }
 
 @media only screen and (max-width: 765px){

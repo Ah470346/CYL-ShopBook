@@ -3,7 +3,6 @@ import {
     Collapse,
     Navbar,
     NavbarToggler,
-    NavbarBrand,
     Nav,
     NavItem,
     Button,
@@ -14,23 +13,24 @@ import {
   } from 'reactstrap';
 import './HeaderCSS.css';
 import {
-    BrowserRouter as Router,
-    Link
+    Link,
+    useHistory
   } from "react-router-dom";
 import Logo1 from '../images/Logo1.svg';
-import Logo2 from '../images/Logo2.svg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import { faUserCircle} from '@fortawesome/free-solid-svg-icons';
 import Nav_Item from './Nav-itemComponent/NavItem.js';
 import Cookies from 'universal-cookie';
-import {AuthApi} from '../App.js';
+import {AuthApi, LoadContext} from '../App.js';
 
 const cookies = new Cookies();
 
 function Header(){ 
+    const history = useHistory();
     const Auth = useContext(AuthApi);
+    const {setSpin} = useContext(LoadContext);
     const [cookieToken,setCookieToken] = useState(cookies.get('token'));
     const [isOpen, setIsOpen] = useState(false);
 
@@ -38,11 +38,15 @@ function Header(){
 
     const navBarEl = useRef(null);
     const p = useRef(null);
-
     const logout = ()=>{
+        setSpin(true);
         cookies.remove('token');
         setCookieToken(undefined);
         Auth.setAuth(false);
+        setTimeout(() => {
+            setSpin(false);
+            history.push("/login")
+        }, 1000);
     }
 
     const [Options,setOptions] = useState([{
@@ -113,26 +117,27 @@ function Header(){
     }
 
     const scrollHeader = ()=>{
-        window.onscroll = function(){myFunction()};
         let sticky = navBarEl.current.offsetTop;
-
         function myFunction() {
-            if(window.pageYOffset >= sticky){
-                navBarEl.current.classList.add('sticky');
-            } else {
-                navBarEl.current.classList.remove('sticky');
+            if(navBarEl.current !== null){
+                if(window.pageYOffset >= sticky){
+                    navBarEl.current.classList.add('sticky');
+                } else {
+                    navBarEl.current.classList.remove('sticky');
+                }
             }
         }
+        window.onscroll = function(){myFunction()};
     }
     
     useEffect(() => {
         scrollHeader();
-    }, [])
+    },[]);
     useEffect(() => {
         setTimeout(() => {
             setCookieToken(cookies.get('token'));
         },500);
-    })
+    },[]);
     return (
         <div >
             <div className="wrap-logo container">
@@ -219,7 +224,7 @@ function Header(){
                                                 <Link className="auth-link" to='/wishlist'>My Wishlist</Link>
                                             </DropdownItem>
                                             <DropdownItem onClick={logout}>
-                                                <Link className="auth-link" to='/login'>logout</Link>
+                                                <Link className="auth-link" >logout</Link>
                                             </DropdownItem>
                                         </DropdownMenu>
                                     }

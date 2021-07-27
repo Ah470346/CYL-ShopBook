@@ -2,7 +2,7 @@
 import axiosClient from './axiosClient.js';
 
 const authApi= {
-    getToken:(data,param) => {
+    getAuth:(data,param) => {
         const url = '/authen';
         return axiosClient.post(url,data,
             {

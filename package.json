@@ -9,10 +9,12 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
+    "antd": "^4.16.8",
     "availity-reactstrap-validation": "^2.7.0",
     "axios": "^0.20.0",
     "bootstrap": "^4.5.3",
     "classnames": "^2.2.6",
+    "cross-env": "^7.0.3",
     "dotenv": "^8.2.0",
     "jquery": "^3.5.1",
     "js-cookie": "^2.2.1",
@@ -32,7 +34,7 @@
     "universal-cookie": "^4.0.4"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "cross-env HOST=0.0.0.0 PORT=3001 react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -52,5 +54,5 @@
       "last 1 safari version"
     ]
   },
-  "proxy":"http://localhost:8080"
+  "proxy": "http://localhost:8000"
 }
