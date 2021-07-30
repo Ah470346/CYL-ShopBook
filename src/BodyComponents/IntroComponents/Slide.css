@@ -11,17 +11,18 @@
   }
   .wrap-intro-infor {
       padding-left: 3.125em;
-      color: white;
       height: 200px;
       width: 100%;
   }
 
   .wrap-intro-infor h4 {
-      font-size: 2em;
+    color: white;
+    font-size: 2em;
       /* transform: translateX(-400px); */
   }
   .wrap-intro-infor h1 {
     font-size: 4em;
+    color: white;
     font-weight: 550;
     /* transform: translateX(800px); */
  }

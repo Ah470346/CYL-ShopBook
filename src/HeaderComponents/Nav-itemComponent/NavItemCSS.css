@@ -144,9 +144,9 @@
     .wrap-nav-link .nav-link .custom-top-nav-link{
         display: none;
     }
-    .wrap-nav-link:first-child{
+    /* .wrap-nav-link:first-child{
         margin-left: 16px !important;
-    } 
+    }  */
     .wrap-nav-link .nav-link .sub-nav-link {
         position: relative;
         display: block;

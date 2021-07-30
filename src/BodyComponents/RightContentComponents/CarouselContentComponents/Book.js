@@ -1,13 +1,11 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import './Book.css';
-import {
-    BrowserRouter as Router,
-    Link
-  } from "react-router-dom";
+import {Link} from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearchPlus } from '@fortawesome/free-solid-svg-icons';
 import Rating from 'react-rating';
+import Cart from '../../../images/productCart.svg';
+import Detail from '../../../images/detail.svg'
 
 
 function Book({book}) {
@@ -39,7 +37,7 @@ function Book({book}) {
                     book.productDetail.price.includes(',') === true &&
                     (
                         <div className='product-sale'>
-                            <div className='sale'>SALE</div>
+                            <div className='sale'>NEW</div>
                             <div className='percent-sale'>- {Math.round(sale)}%</div>
                         </div> 
                     )
@@ -57,7 +55,7 @@ function Book({book}) {
                     ></Rating>
                 </div>
                 <div className='product-title'>
-                    <Link className='product-link' to='/'><h5>{name}</h5></Link>
+                    <Link className='product-link' to='/'><p>{name}</p></Link>
                 </div>
                 <div className='product-price'>
                     {
@@ -67,6 +65,13 @@ function Book({book}) {
                     {
                         price === '' && (<div className='wrap-price'><p className='price'>{book.productDetail.price}</p></div>)
                     }
+                </div>
+                <div className="product-cart">
+                    <div className="product-cart-add">
+                    <img src={Cart} alt="" />
+                        <span className="ml-2">Add to cart</span>
+                    </div>
+                    <Link><img className="product-cart-detail" src={Detail} alt="" /></Link>
                 </div>
             </div>
         </div>

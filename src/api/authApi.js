@@ -9,6 +9,14 @@ const authApi= {
                 withCredentials: true
             }
         );
+    },
+    register:(data,param) => {
+        const url = '/authen/register';
+        return axiosClient.post(url,data,
+            {
+                withCredentials: true
+            }
+        );
     }
 }
 

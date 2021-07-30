@@ -5,9 +5,6 @@
     font-size: 1.1em;
 }
 
-.wrap-login .container{
-    height: 100vh;
-}
 .wrap-login .login {
     width: 84%;
     height: 45px;
@@ -31,6 +28,15 @@
 
 .wrap-login .form-check{
     width: 84%;
+}
+
+.wrap-login .form .form-check .check {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.wrap-login .form .form-check .form-check-input{
+    margin-top: 0;
 }
 
 .wrap-login .form .formGroup .wrap-input{

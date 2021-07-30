@@ -1,8 +1,27 @@
 .App {
     font-family: 'Times New Roman', Times, serif;
-    font-size: 1em;
+    font-size: 16px;
 }
 
+.ant-spin {
+    width: 100vw !important;
+    height: 100% !important;
+    max-height: 100vh !important;
+    position: fixed !important;
+}
+
+.ant-spin-dot{
+    width: 120px;
+    height: 120px;
+    margin: 0;
+    transform: translate(-50%,-50%);
+}
+
+.ant-message-notice-content  .ant-message-error , .ant-message-success{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
 @media only screen and (max-width: 765px){
     .App {
         max-width: 100%;

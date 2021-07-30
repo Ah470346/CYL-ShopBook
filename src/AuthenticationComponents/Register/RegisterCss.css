@@ -1,11 +1,15 @@
 
 .wrap-register {
-    width: 100%;
-    height: 100%;
+    width: 100vw;
     background-color: #f6f5f7;
 }
+.wrap-register .container {
+    height: 100%;
+}
 .wrap-register .register {
+    height: 45px;
     width: 84%;
+    font-size: 1.1em;
 }
 
 .wrap-register h1 {
@@ -22,6 +26,7 @@
 
 .wrap-register .formGroup {
     width: 84%;
+    margin-bottom: 20px;
 }
 
 .wrap-register .formGroup label {
@@ -49,7 +54,11 @@
 }
 .wrap-register .form .formGroup .wrap-input{
     position: relative;
-    overflow: hidden;
+}
+
+.wrap-register .form .formGroup .wrap-input .invalid-feedback{
+    position: absolute;
+    bottom: -20px;
 }
 
 .wrap-register .form .formGroup .wrap-input .input{

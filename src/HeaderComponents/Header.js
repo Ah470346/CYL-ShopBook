@@ -23,14 +23,13 @@ import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import { faUserCircle} from '@fortawesome/free-solid-svg-icons';
 import Nav_Item from './Nav-itemComponent/NavItem.js';
 import Cookies from 'universal-cookie';
-import {AuthApi, LoadContext} from '../App.js';
+import {AuthApi} from '../App.js';
 
 const cookies = new Cookies();
 
 function Header(){ 
     const history = useHistory();
     const Auth = useContext(AuthApi);
-    const {setSpin} = useContext(LoadContext);
     const [cookieToken,setCookieToken] = useState(cookies.get('token'));
     const [isOpen, setIsOpen] = useState(false);
 
@@ -39,14 +38,10 @@ function Header(){
     const navBarEl = useRef(null);
     const p = useRef(null);
     const logout = ()=>{
-        setSpin(true);
         cookies.remove('token');
         setCookieToken(undefined);
         Auth.setAuth(false);
-        setTimeout(() => {
-            setSpin(false);
-            history.push("/login")
-        }, 1000);
+        history.push("/login");
     }
 
     const [Options,setOptions] = useState([{
@@ -224,7 +219,7 @@ function Header(){
                                                 <Link className="auth-link" to='/wishlist'>My Wishlist</Link>
                                             </DropdownItem>
                                             <DropdownItem onClick={logout}>
-                                                <Link className="auth-link" >logout</Link>
+                                                <Link className="auth-link">logout</Link>
                                             </DropdownItem>
                                         </DropdownMenu>
                                     }

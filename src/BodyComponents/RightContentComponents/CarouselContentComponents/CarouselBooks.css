@@ -12,13 +12,97 @@
     padding: 0;
 }
 
-@media only screen and(max-width: 765px){
+.wrap-slide-book .react-multi-carousel-list button {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    width: 70px;
+    height: 70px;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.3s ease, background 0.2s ease;
+    outline: none;
+    border: none;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    background-color: white;
+}
+
+.wrap-slide-book .react-multi-carousel-list button:hover {
+    background-color: #00abe0;
+}
+
+.wrap-slide-book .react-multi-carousel-list button:hover::before  {
+    border-color: white;
+}
+
+.wrap-slide-book .btn-previous {
+    left: 5px;
+    transform: translateX(20px);
+}
+
+.wrap-slide-book .btn-next {
+    right: 5px;
+    transform: translateX(-20px);
+}
+
+.wrap-slide-book .btn-previous::before {
+    content: "";
+    width: 22px;
+    height: 22px;
+    margin-left: 20%;
+    border: 3px solid black;
+    border-top: none;
+    border-right: none;
+    transition: all 0.2s ease;
+    transform: rotate(45deg);
+}
+
+.wrap-slide-book .btn-next::before {
+    content: "";
+    width: 22px;
+    height: 22px;
+    margin-right: 20%;
+    border: 3px solid black;
+    border-bottom: none;
+    border-left: none;
+    transition: all 0.2s ease;
+    transform: rotate(45deg);
+    
+}
+
+.wrap-slide-book .react-multi-carousel-list:hover button{
+    visibility: visible;
+    opacity: 1;
+    transform: translateX(0);
+} 
+
+.wrap-slide-book .react-multi-carousel-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+@media only screen and (max-width: 765px){
     .wrap-slide-book .book-title .title {
-        font-size: 0.8em;
+        font-size: 1.3em;
     }
 
     .react-multi-carousel-list {
-        margin-left: 50% !important;
-        transform: translateX(-50%) !important;
+        /* margin-left: 50% !important;
+        transform: translateX(-50%) !important; */
+    }
+
+    .wrap-slide-book .react-multi-carousel-list button {
+        width: 50px;
+        height: 50px;
+    }
+    .wrap-slide-book  .react-multi-carousel-list  button::before{
+        width: 15px;
+        height: 15px;
     }
 }

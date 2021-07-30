@@ -1,9 +1,7 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import Book from './Book.js';
 import './CarouselBooks.css';
 import Carousel from "react-multi-carousel";
-import "react-multi-carousel/lib/styles.css";
 import UAParser from "ua-parser-js";
 
 
@@ -54,8 +52,9 @@ function CarouselBooks({slideBook}) {
             </div>
             <Carousel responsive={responsive} 
                 {...getConfigSlide()} 
-                autoPlay={deviceType !== "mobile" ? true : false}
-                removeArrowOnDeviceType={["tablet", "mobile"]}
+                // autoPlay={true}
+                customLeftArrow={<button className="btn-previous"></button>}
+                customRightArrow={<button className="btn-next"></button>}
                 deviceType={deviceType}
                 >
                     {
