@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import CarouselBooks from './CarouselBooks.js';
 import './ContentCarousel.css';
 

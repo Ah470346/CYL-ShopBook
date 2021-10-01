@@ -8,6 +8,7 @@ import book1 from '../images/bookFavorite1.jpg';
 import book2 from '../images/bookFavorite2.jpg';
 import ContentCarousel from './RightContentComponents/CarouselContentComponents/ContentCarousel.js';
 import RecentPost from './LeftContentComponents/RecentPost.js';
+import LittleCarousel from './LittleCarousel/LittleCarousel';
 
 function Body({menuBook,slideBooks}){
     const recentPost = {
@@ -27,17 +28,21 @@ function Body({menuBook,slideBooks}){
                 </div>
             </div>
             <div className='row content'>
-                <div className="col-lg-3 content-left" >
+                <div className="col-md-4 col-lg-3 content-left" >
                     <Category menuBook={menuBook}></Category>
                     <div className='comics-book'>
                         <img src='//cdn.shopify.com/s/files/1/0066/5550/8549/files/31.jpg?v=1570444717'></img>
                     </div>
                     <div className='recent-post mt-5'>
-                        <p>RECENT POST</p>
+                        <p className="left-title">RECENT POST</p>
                         <RecentPost post={recentPost}></RecentPost>
                     </div>
+                    <div className="trending mt-5">
+                        <p className="left-title">TRENDING PRODUCTS</p>
+                        <LittleCarousel number={2} slideBooks={[...slideBooks]}></LittleCarousel>
+                    </div>
                 </div>
-                <div className="col-lg-9 content-right  order-lg-last order-first">
+                <div className="col-md-8 col-lg-9 content-right  order-md-last order-first">
                     <div className='row favorite-books'>
                         <div className='col-md-7 favorite-books-brand left'>
                             <FavoriteBook image={book1} title={'True Crime to Blow Your Mind'}></FavoriteBook>

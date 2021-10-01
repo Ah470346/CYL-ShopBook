@@ -22,7 +22,7 @@
     transform: scale(1.1);
 }
 
-.body .content-left .recent-post > p {
+.body .content-left .left-title {
     color: rgb(83, 78, 78);
     font-size: 1.2em;
     display: inline-block;

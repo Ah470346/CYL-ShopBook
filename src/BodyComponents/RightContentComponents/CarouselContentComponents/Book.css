@@ -259,9 +259,15 @@
 .wrap-product:hover .product-cart .product-cart-add{
     transform: translateX(0);
     opacity: 1;
+    cursor: pointer;
 }
 
-.wrap-product .product-cart img {
+.wrap-product .product-cart .product-cart-add:hover{
+    color: #00abe0;
+    fill: #00abe0;
+}
+
+.wrap-product .product-cart svg {
     width: 18px;
     height: 18px;
 }
@@ -272,6 +278,11 @@
     transform: translateX(-30px);
     transition: all 0.3s ease;
     opacity: 0;
+    color: black;
+}
+
+.wrap-product .product-cart a:hover {
+    color: #00abe0;
 }
 
 .wrap-product:hover .product-cart a{

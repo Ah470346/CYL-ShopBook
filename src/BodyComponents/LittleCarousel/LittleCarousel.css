@@ -1,0 +1,137 @@
+.wrap-trending {
+    margin-top: 20px;
+    width: 100%;
+}
+
+.wrap-trending .react-multi-carousel-list{
+    width: 100%;
+    height: 100%;
+}
+
+.wrap-trending .react-multi-carousel-list button {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    width: 30px;
+    height: 30px;
+    /* visibility: hidden;
+    opacity: 0; */
+    transition: all 0.3s ease, background 0.2s ease;
+    outline: none;
+    border: none;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    background-color: white;
+}
+
+.wrap-trending .btn-previous::before {
+    content: "";
+    width: 10px;
+    height: 10px;
+    margin-left: 20%;
+    border: 2px solid black;
+    border-top: none;
+    border-right: none;
+    transition: all 0.2s ease;
+    transform: rotate(45deg);
+}
+
+.wrap-trending .btn-next::before {
+    content: "";
+    width: 10px;
+    height: 10px;
+    margin-right: 20%;
+    border: 2px solid black;
+    border-bottom: none;
+    border-left: none;
+    transition: all 0.2s ease;
+    transform: rotate(45deg);
+    
+}
+
+.wrap-trending .btn-previous {
+    left: 5px;
+    transform: translateX(10px);
+}
+
+.wrap-trending .btn-next {
+    right: 5px;
+    transform: translateX(-10px);
+}
+
+.wrap-trending .book-item {
+    height: 400px;
+}
+
+.wrap-trending .book-item .wrap-item {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    height: 33%;
+    display: flex;
+    flex-direction: row;
+}
+
+.wrap-trending .book-item .wrap-item:last-child {
+    border-bottom: none;
+}
+
+.wrap-trending .book-item .wrap-item p {
+    margin: 0;
+    padding: 0;
+}
+
+.wrap-trending  .product-image{
+    width: 35%;
+    padding: 15px 10px 15px 10px;
+}
+
+.wrap-trending .wrap-info {
+    display: flex;
+    flex-direction: column;
+    width: 65%;
+    padding: 15px 5px 15px 5px;
+}
+
+.wrap-trending .book-item .wrap-item .product-image img {
+    width: 100%;
+    height: 100%;
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.5);
+}
+
+.wrap-trending .product-title {
+    width: 100%;
+
+}
+
+.wrap-trending .product-title .product-link {
+    text-decoration: none;
+    color: rgb(32, 31, 31);
+    display: inline-block;
+    width: 100%;
+    font-size: 1.1em;
+}
+
+.wrap-trending .product-price {
+    opacity: 1;
+    transition: all 0.3s ease;
+}
+
+/* .wrap-trending .product-price {
+    opacity: 0;
+} */
+
+.wrap-trending .product-price .price {
+    margin: 0;
+    margin-right: 10px;
+    font-size: 1.2em;
+    color:  #00abe0;
+}
+
+.wrap-trending .product-price .price-sale {
+    margin: 0;
+    text-decoration: line-through;
+    font-size: 1em;
+    color: rgb(87, 84, 84);
+}

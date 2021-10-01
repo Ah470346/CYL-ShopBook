@@ -4,8 +4,8 @@ import {Link} from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearchPlus } from '@fortawesome/free-solid-svg-icons';
 import Rating from 'react-rating';
-import Cart from '../../../images/productCart.svg';
-import Detail from '../../../images/detail.svg'
+import {ReactComponent as Cart} from '../../../images/productCart.svg';
+import  {ReactComponent as Detail} from '../../../images/detail.svg'
 
 
 function Book({book}) {
@@ -68,10 +68,10 @@ function Book({book}) {
                 </div>
                 <div className="product-cart">
                     <div className="product-cart-add">
-                    <img src={Cart} alt="" />
+                        <Cart />
                         <span className="ml-2">Add to cart</span>
                     </div>
-                    <Link><img className="product-cart-detail" src={Detail} alt="" /></Link>
+                    <Link><Detail /></Link>
                 </div>
             </div>
         </div>
